@@ -27,7 +27,9 @@
     </style>
   </head>
   <body>
+      <h1>My Stopwatch</h1>
     <p class="clock"></p>
+    <div id="stopWatch">0</div>
     <button class="start">Start</button>
     <button class="stop">Stop</button> 
     <button class="reset">Reset</button>
@@ -41,6 +43,31 @@
 
       displayTime();
       const createClock = setInterval(displayTime, 1000);
+
+      const startBtn = document.querySelector(".start");
+      const stopBtn = document.querySelector(".stop");
+      const resetBtn = document.querySelector(".reset");
+      const watchDiv = document.querySelector("#stopWatch");
+      let second = 0;
+      let interval;
+      
+      function updateDisplay() {
+           watchDiv.innerText = second;
+        
+      }
+     
+      function startClock() { 
+       interval = setInterval( () => {
+            second++
+            updateDisplay()
+        }, 1000);
+    
+     }
+
+     startBtn.addEventListener('click', startClock);
+     stopBtn.addEventListener('click', () => {
+         clearInterval(interval);
+     })
     </script>
   </body>
 </html>
