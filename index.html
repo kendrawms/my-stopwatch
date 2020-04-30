@@ -65,8 +65,15 @@
      }
 
      startBtn.addEventListener('click', startClock);
+    
      stopBtn.addEventListener('click', () => {
          clearInterval(interval);
+     })
+
+     resetBtn.addEventListener('click', () => {
+         clearInterval(interval);
+        second = 0;
+        updateDisplay();
      })
     </script>
   </body>
