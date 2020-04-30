@@ -7,10 +7,31 @@
       p {
         font-family: sans-serif;
       }
+      button {
+          margin: 10px;
+          padding: 8px 12px;
+      }
+      body {
+          text-align: center;
+      }
+      .start {
+          background-color: rgb(39, 224, 39);
+      }
+      .stop {
+          background-color: red;
+          color: white;
+      }
+      .reset {
+          background-color: yellow;
+      }
     </style>
   </head>
   <body>
     <p class="clock"></p>
+    <button class="start">Start</button>
+    <button class="stop">Stop</button> 
+    <button class="reset">Reset</button>
+    
     <script>
       function displayTime() {
         let date = new Date();
